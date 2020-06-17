@@ -17,9 +17,7 @@ class App < Sinatra::Base
     @phrase = params[:phrase]
     string = ""
     @number.times do
-      total = [string, @phrase].join
     end
-    puts total
   end
 
   get "/say/:word1/:word2/:word3/:word4/:word5" do
