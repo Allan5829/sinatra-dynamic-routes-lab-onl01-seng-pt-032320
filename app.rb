@@ -5,6 +5,7 @@ class App < Sinatra::Base
     @name = params[:name]
     array = @name.split
     rarray = array.reverse()
+    puts rarray
     "#{rarray.join}"
   end
 
