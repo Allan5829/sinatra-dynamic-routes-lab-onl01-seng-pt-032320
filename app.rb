@@ -3,10 +3,7 @@ require_relative 'config/environment'
 class App < Sinatra::Base
   get "/reversename/:name" do
     @name = params[:name]
-    array = "#{@name}".split()
-    rarray = array.reverse()
-    puts rarray
-    "#{rarray.join}"
+    "#{@name.reverse}"
   end
 
   get "/square/:number" do
