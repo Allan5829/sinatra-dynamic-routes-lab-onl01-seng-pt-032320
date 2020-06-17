@@ -23,8 +23,19 @@ class App < Sinatra::Base
   end
 
   get "/:operation/:number1/:number2" do
-    @user_name = params[:name]
-    "Goodbye, #{@user_name}."
+    @operation = params[:operation]
+    @number1 = params[:number1]
+    @number2 = params[:number2]
+    if @operation == "add"
+      total = @number1.to_i + @number2.to_i
+    elsif @operation == "subtract"
+      total = @number1.to_i - @number2.to_i
+    elsif @operation == "multiply"
+      total = @number1.to_i * @number2.to_i
+    elsif @operation == "divide"
+      total = @number1.to_i % @number2.to_i
+    end
+    "#{total.to_s}"
   end
 
 end
